@@ -1,5 +1,5 @@
 <?php 
-	include_once("funtion/koneksi.php");
+	include_once("function/koneksi.php");
 	include_once("function/helper.php");
 
 	$email = $_POST['email'];
@@ -10,7 +10,7 @@
 		header("Location: ".BASE_URL."index.php?page=login&notif=true");
 	} else{
 		$row = mysqli_fetch_assoc($query);
-		$row['nama'];
+		echo $row['nama'];
 	}
 	
 	mysqli_error($koneksiku);
