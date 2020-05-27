@@ -1,9 +1,9 @@
 <div id="container-user-akses">
-	<form action="<?php echo BASE_URL."proses_register.php"; ?>" method="POST">
+	<form action="<?php echo BASE_URL."proses_login.php"; ?>" method="POST">
 		<?php 
 		
 			$notif = isset($_GET['notif']) ? $_GET['notif'] : false;
-			if($notif == "require"){
+			if($notif == "true"){
 				echo "<div class='notif'> Maaf, Email atau Password yang anda masukkan salah </div>";
 			} 
 		 ?>
