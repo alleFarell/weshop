@@ -39,6 +39,9 @@ body{
 #container #header #menu #btn-keranjang img{
 	vertical-align: bottom;
 }
+#container #header #menu #user{
+	color: white;
+}
 /* END OF HEADER */
 /* CONTENT */
 #container #content{

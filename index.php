@@ -1,7 +1,14 @@
 <?php 
 	include_once("function/helper.php");
-
+	session_start();
 	$page = isset($_GET['page']) ? $_GET['page'] : false;
+
+	$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : false;
+	$nama = isset($_SESSION['nama']) ? $_SESSION['nama'] : false;
+	$alamat = isset($_SESSION['alamat']) ? $_SESSION['alamat'] : false;
+	$phone = isset($_SESSION['phone']) ? $_SESSION['phone'] : false;
+	$email = isset($_SESSION['email']) ? $_SESSION['email'] : false;
+	$level = isset($_SESSION['level']) ? $_SESSION['level'] : false;
  ?>
 
  <!DOCTYPE html>
@@ -19,8 +26,17 @@
 
  			<div id="menu">
  				<div id="user">
- 					<a href="<?php echo BASE_URL."index.php?page=login"; ?>">Login</a>
- 					<a href="<?php echo BASE_URL."index.php?page=register"; ?>">Register</a>
+ 					<?php 
+ 						if($user_id){
+ 							echo "Hi <b>$nama</b>, <a href='".BASE_URL."index.php?page=my_profile&module=pesanan&action=list'>My Profile</a>";
+ 							echo "<a href='".BASE_URL."index.php?page=logout'>Logout</a>";
+ 						} else{
+ 							echo "<a href='".BASE_URL."index.php?page=login'>Login</a>
+ 								  <a href='".BASE_URL."index.php/page=register'>Register</a>";
+ 						}
+ 						
+ 					?>
+ 						
  				</div>
 
  				<a href="<?php echo BASE_URL."index.php?page=keranjang"; ?>" id="btn-keranjang"><img src="<?php echo BASE_URL."img/cart.png"; ?>"></a>
